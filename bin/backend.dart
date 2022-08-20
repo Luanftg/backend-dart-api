@@ -1,6 +1,6 @@
 import 'package:shelf/shelf.dart';
-import 'api/blog_noticias.dart';
-import 'api/login_api.dart';
+import 'apis/blog_noticias.dart';
+import 'apis/login_api.dart';
 import 'infra/custom_server.dart';
 import 'util/custom_env.dart';
 
