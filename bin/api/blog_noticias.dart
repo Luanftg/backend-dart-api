@@ -9,6 +9,23 @@ class BlogApi {
       return Response.ok("Choveu hoje");
     });
 
+    // /blog/noticias
+    router.post('/blog/noticias', (Request req) {
+      return Response.ok("Choveu hoje");
+    });
+
+    // /blog/noticias?id=1
+    router.put('/blog/noticias', (Request req) {
+      String? id = req.url.queryParameters['id'];
+      return Response.ok("Choveu hoje");
+    });
+
+    // /blog/noticias?id=1  //delete
+    router.delete('/blog/noticias', (Request req) {
+      String? id = req.url.queryParameters['id'];
+      return Response.ok("Choveu hoje");
+    });
+
     return router;
   }
 }
