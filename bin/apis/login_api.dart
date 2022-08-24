@@ -11,7 +11,10 @@ class LoginApi {
     Router router = Router();
 
     router.post('/login', (Request req) async {
-      return Response.ok(await _securityService.generateJWT("1"));
+      var token = await _securityService.generateJWT("1");
+      var result = await _securityService.validateJWT(token);
+
+      return Response.ok(token);
     });
 
     return router;
