@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
@@ -9,10 +8,15 @@ import 'api.dart';
 
 class BlogApi extends Api {
   final GenericService<NoticiaModel> _service;
-  BlogApi(this._service);
+  BlogApi(
+    this._service,
+  );
 
   @override
-  Handler getHandler({List<Middleware>? middlewares}) {
+  Handler getHandler({
+    List<Middleware>? middlewares,
+    bool isSecurity = true,
+  }) {
     Router router = Router();
 
     router.get('/blog/noticias', (Request req) {
@@ -44,6 +48,7 @@ class BlogApi extends Api {
 
     return createHandler(
       router: router,
+      isSecurity: isSecurity,
       middlewares: middlewares,
     );
   }
