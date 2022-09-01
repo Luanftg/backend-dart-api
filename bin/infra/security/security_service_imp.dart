@@ -1,7 +1,5 @@
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:shelf/shelf.dart';
-import 'package:shelf/src/middleware.dart';
-
 import '../../util/custom_env.dart';
 import 'security_service.dart';
 
